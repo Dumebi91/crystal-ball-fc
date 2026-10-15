@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 
-const MEMBER_ONLY = ['/today', '/knowball', '/callit', '/leagues', '/me'];
+const MEMBER_ONLY = ['/today', '/knowball', '/callit', '/leagues', '/me', '/admin'];
 
 // Keeps the login session fresh on every request and sends signed-out visitors to /login for member pages.
 export async function middleware(request: NextRequest) {

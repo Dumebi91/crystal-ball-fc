@@ -29,13 +29,26 @@ The tests run the real migrations in an in-memory Postgres with a controlled clo
 4. **Vercel** (vercel.com): import this GitHub repository. Add the environment variables listed in `.env.example`, with real values. Set `CRON_SECRET` to a long random string.
 5. **Domain:** Vercel → Project → Domains → add `www.crystalballfc.com` and follow the DNS instructions at your domain registrar.
 
-## Loading content
+## The admin area (/admin)
 
-Until the admin area is built, load each day's quiz, poll and take with `supabase/content-template.sql` in the Supabase SQL Editor.
+Four roles: **member** (everyone), **steward** (reviews reported replies and fair-play flags), **editor** (loads Know Ball, polls, takes and Oracle videos) and **admin** (everything, plus team roles and point corrections). Every admin action is logged.
+
+- **Overview:** the next 14 days of content, with gaps in gold, plus open reports and flags.
+- **Know Ball:** 7 fixed slots and 3 swap slots with two versions each. Type the questions in, or paste rows from a spreadsheet. Shows the difficulty mix (3 easy, 3 medium, 2 hard, 2 home colours). A quiz locks once anyone starts it.
+- **Polls**, **Takes & videos** (schedule a take or an Oracle video with its transcript and the Oracle's call), **Moderation** and **Members & log**.
+
+To make yourself the first admin, join the site, then run this once in Supabase → SQL Editor (with your handle):
+
+```sql
+update public.profiles set role = 'admin' where handle = 'your_handle';
+```
+
+After that, give the team their roles from Members & log.
+
+You can still load content by SQL with `supabase/content-template.sql` if you ever need to.
 
 ## Still to build before launch
 
-- Admin area for loading content, and for Stewards to review reports and fair-play flags
 - Cold Takes and Oracle video pages (the database side is done)
 - Call It International (a second fixture feed)
 - Final Privacy Policy and Terms text on /privacy and /terms
