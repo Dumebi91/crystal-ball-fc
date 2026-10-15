@@ -7,6 +7,7 @@ const TABS = [
   ['/today', 'Today', 'home'],
   ['/knowball', 'Know Ball', 'q'],
   ['/callit', 'Call It', 'target'],
+  ['/takes', 'Takes', 'chat'],
   ['/table', 'Table', 'trophy'],
 ] as const;
 
@@ -28,8 +29,8 @@ export function TabBar() {
 export function NavLinks({ member }: { member: boolean }) {
   const path = usePathname();
   const links = member
-    ? [['/today', 'Today'], ['/knowball', 'Know Ball'], ['/callit', 'Call It'], ['/table', 'The Table'], ['/leagues', 'Leagues']]
-    : [['/how', 'How it works'], ['/table', 'The Table']];
+    ? [['/today', 'Today'], ['/knowball', 'Know Ball'], ['/callit', 'Call It'], ['/takes', 'Cold Takes'], ['/table', 'The Table'], ['/leagues', 'Leagues']]
+    : [['/how', 'How it works'], ['/takes', 'Cold Takes'], ['/table', 'The Table']];
   return (
     <nav className="links" aria-label="Main">
       {links.map(([href, label]) => (

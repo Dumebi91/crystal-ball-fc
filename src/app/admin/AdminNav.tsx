@@ -8,7 +8,7 @@ export function AdminNav({ role }: { role: string }) {
   const moderate = role === 'steward' || role === 'admin';
   const links: [string, string][] = [
     ['/admin', 'Overview'],
-    ...(content ? ([['/admin/quiz', 'Know Ball'], ['/admin/poll', 'Polls'], ['/admin/takes', 'Takes & videos']] as [string, string][]) : []),
+    ...(content ? ([['/admin/quiz', 'Know Ball'], ['/admin/poll', 'Polls'], ['/admin/takes', 'Takes & videos'], ['/admin/internationals', 'Internationals']] as [string, string][]) : []),
     ...(moderate ? ([['/admin/moderation', 'Moderation']] as [string, string][]) : []),
     ...(role === 'admin' ? ([['/admin/members', 'Members & log']] as [string, string][]) : []),
   ];

@@ -36,6 +36,7 @@ Four roles: **member** (everyone), **steward** (reviews reported replies and fai
 - **Overview:** the next 14 days of content, with gaps in gold, plus open reports and flags.
 - **Know Ball:** 7 fixed slots and 3 swap slots with two versions each. Type the questions in, or paste rows from a spreadsheet. Shows the difficulty mix (3 easy, 3 medium, 2 hard, 2 home colours). A quiz locks once anyone starts it.
 - **Polls**, **Takes & videos** (schedule a take or an Oracle video with its transcript and the Oracle's call), **Moderation** and **Members & log**.
+- **Internationals:** paste FIFA's ranking (top first). During international breaks, Super Eagles games are always playable and top-20 v top-20 games switch on by themselves; switch others on to reach 6 to 8 games. Set `API_FOOTBALL_INT_LEAGUES` to the competitions to pull.
 
 To make yourself the first admin, join the site, then run this once in Supabase → SQL Editor (with your handle):
 
@@ -49,8 +50,6 @@ You can still load content by SQL with `supabase/content-template.sql` if you ev
 
 ## Still to build before launch
 
-- Cold Takes and Oracle video pages (the database side is done)
-- Call It International (a second fixture feed)
 - Final Privacy Policy and Terms text on /privacy and /terms
 - Cookie banner and analytics (PostHog, loaded only after Accept)
 - The Ten (follows launch)

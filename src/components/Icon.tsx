@@ -8,6 +8,7 @@ const PATHS: Record<string, string> = {
   x: 'M6 6l12 12M18 6L6 18',
   flame: 'M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z',
   lock: 'M5 11h14v10H5zM8 11V8a4 4 0 0 1 8 0v3',
+  chat: 'M4 5h16v11H9l-5 4z',
 };
 
 export function Icon({ name, size = 20 }: { name: keyof typeof PATHS | string; size?: number }) {

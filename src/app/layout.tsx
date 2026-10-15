@@ -53,6 +53,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <img src="/brand/orb.svg" alt="" style={{ width: 30, height: 'auto' }} />
             <nav className="row" aria-label="Footer" style={{ flexWrap: 'wrap', gap: '8px 22px', fontSize: 14, flex: 1 }}>
               <Link href="/how">How it works</Link>
+              <Link href="/takes">Cold Takes</Link>
               <Link href="/terms">Terms</Link>
               <Link href="/privacy">Privacy</Link>
             </nav>

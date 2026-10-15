@@ -20,8 +20,12 @@ export default async function TodayPage() {
   const [{ data: quiz }, { data: poll }, { data: fixtures }] = await Promise.all([
     supabase.from('kb_quizzes').select('id').eq('quiz_date', today).maybeSingle(),
     supabase.from('polls').select('id, question, options, opens_at, closes_at').eq('poll_date', today).maybeSingle(),
-    supabase.from('fixtures').select('id, kickoff_at').eq('matchweek_id', mw?.id ?? -1),
+    supabase.from('fixtures').select('id, kickoff_at').eq('matchweek_id', mw?.id ?? -1).eq('featured', true),
   ]);
+  const { data: latest } = await supabase.from('takes').select('slug, kind, title, published_at, video')
+    .order('published_at', { ascending: false }).limit(6);
+  const take = (latest ?? []).find((t) => t.kind === 'take');
+  const video = (latest ?? []).find((t) => t.kind === 'video' && Date.now() - Date.parse(t.published_at) < 7 * 86400000);
   const { data: attempt } = quiz
     ? await supabase.from('kb_attempts').select('status, score').eq('quiz_id', quiz.id).maybeSingle()
     : { data: null };
@@ -43,6 +47,14 @@ export default async function TodayPage() {
       </div>
       <div className="cols">
         <div className="main">
+          {video && (
+            <Link href={`/takes/${video.slug}`} className="card stack" style={{ gap: 8, textDecoration: 'none', color: 'var(--ink)', border: '1.5px solid var(--gold)' }}>
+              <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}><p className="eyebrow">New from the Oracle</p>{video.video?.episode && <span className="cap">Episode {video.video.episode}</span>}</div>
+              <p className="headline">{video.title}</p>
+              {video.video?.oracle_call?.pick && <p className="cap">The Oracle's call: {video.video.oracle_call.game ? `${video.video.oracle_call.game}, ` : ''}{video.video.oracle_call.pick}. Think you know better?</p>}
+              <span className="btn primary sm" style={{ alignSelf: 'flex-start' }}>Watch now</span>
+            </Link>
+          )}
           <div className="grid2" style={{ gap: 18 }}>
             <div className="card stack" style={{ gap: 12 }}>
               <div className="between"><p className="eyebrow">Know Ball · 9am</p><span className={`chip ${done ? 'cyan' : 'gold'}`}>{done ? 'Played' : quiz ? 'Live' : 'No quiz'}</span></div>
@@ -58,6 +70,13 @@ export default async function TodayPage() {
             </div>
           </div>
           {poll && <Poll poll={poll} myVote={myVote?.option ?? null} />}
+          {take && (
+            <Link href={`/takes/${take.slug}`} className="card stack" style={{ gap: 10, textDecoration: 'none', color: 'var(--ink)' }}>
+              <div className="row"><span className="chip mag">Cold Take</span></div>
+              <p className="headline">{take.title}</p>
+              <span className="vio" style={{ fontWeight: 600, fontSize: 14 }}>Agree or disagree? Vote inside</span>
+            </Link>
+          )}
         </div>
         <aside className="rail">
           <div className="card stack" style={{ gap: 6 }}>
