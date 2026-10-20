@@ -39,7 +39,9 @@ export function verifyHook(secret: string, body: string, headers: Headers): Hook
 }
 
 export function codeMessage(otp: string): string {
-  return `Your Crystal Ball FC code is ${otp}. Don't share it with anyone, including us.`;
+  // Must match the sample message approved with the Termii sender ID, word for word. The 10 minutes is
+  // Supabase → Authentication → Sign In / Providers → Phone → SMS OTP Expiry (600 seconds).
+  return `Your Crystal Ball FC verification code is ${otp}. This code expires in 10 minutes. Do not share it with anyone.`;
 }
 
 /** Shows enough of a number to trace a problem in the logs, never the whole number. */
