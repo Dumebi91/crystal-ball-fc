@@ -24,7 +24,11 @@ The tests run the real migrations in an in-memory Postgres with a controlled clo
 ## Going live: one-time setup
 
 1. **Supabase** (supabase.com): create a project in the EU (Frankfurt) region. In the SQL Editor, run each file in `supabase/migrations` in order, then `supabase/seed.sql`.
-2. **Phone logins:** Supabase → Authentication → Sign In / Providers → Phone. Choose an SMS provider and enter its keys. (Termii is cheaper for Nigerian numbers but needs a small "Send SMS" hook; Twilio works out of the box. To be decided.)
+2. **Phone logins (Termii):** codes are sent by our Send SMS hook (`/api/hooks/send-sms`), which checks Supabase's signature and passes the text to Termii on the DND route.
+   - Termii: create an account, register a sender ID (for example `CrystalBall`) and wait for approval, top up, and copy the API key and your base URL.
+   - Supabase → Authentication → Sign In / Providers → Phone: switch it on.
+   - Supabase → Authentication → Hooks → Send SMS: choose HTTPS, URL `https://www.crystalballfc.com/api/hooks/send-sms`, generate the secret.
+   - Vercel: add `SEND_SMS_HOOK_SECRET`, `TERMII_API_KEY`, `TERMII_SENDER_ID` and `TERMII_BASE_URL`, then redeploy.
 3. **API-Football** (api-football.com): subscribe to a paid plan and copy the API key.
 4. **Vercel** (vercel.com): import this GitHub repository. Add the environment variables listed in `.env.example`, with real values. Set `CRON_SECRET` to a long random string.
 5. **Domain:** Vercel → Project → Domains → add `www.crystalballfc.com` and follow the DNS instructions at your domain registrar.
