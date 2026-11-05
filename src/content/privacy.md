@@ -77,7 +77,7 @@ Under the Act you can:
 - withdraw your consent at any time, without affecting what we did before;
 - ask for a person to review any decision made about you by an automated system.
 
-You can download your data and delete your account yourself on the Me page. For anything else, email privacy@crystalballfc.com. We'll reply within 30 days and may ask you to confirm it's you first.
+You can download your data and delete your account yourself on the Me page. For anything else, email dee@crystalballfc.com. We'll reply within 30 days and may ask you to confirm it's you first.
 
 ### 8. Fair-play checks
 
@@ -89,7 +89,7 @@ We use essential cookies to keep you logged in. These are always on, because the
 
 ### 10. Age
 
-Crystal Ball FC is for people aged 18 and over. We don't knowingly collect data from anyone younger. If we find that a member is under 18, we'll close the account and delete their data. If you think a child has joined, tell us at privacy@crystalballfc.com.
+Crystal Ball FC is for people aged 18 and over. We don't knowingly collect data from anyone younger. If we find that a member is under 18, we'll close the account and delete their data. If you think a child has joined, tell us at dee@crystalballfc.com.
 
 ### 11. Security and breaches
 
@@ -99,6 +99,6 @@ We use encryption in transit, access controls and one-time login codes, and we l
 
 ### 12. Complaints and changes
 
-If you're unhappy with how we've handled your data, tell us first at privacy@crystalballfc.com and we'll try to fix it. You also have the right to complain to the Nigeria Data Protection Commission ([ndpc.gov.ng](https://ndpc.gov.ng)).
+If you're unhappy with how we've handled your data, tell us first at dee@crystalballfc.com and we'll try to fix it. You also have the right to complain to the Nigeria Data Protection Commission ([ndpc.gov.ng](https://ndpc.gov.ng)).
 
 If we change this policy in a way that matters, we'll tell you on the site at least 14 days before the change takes effect. The date at the top shows the latest version.

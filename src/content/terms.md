@@ -37,7 +37,7 @@ All times are West Africa Time. Full rules for each game are on the [How it work
 - **Postponed or abandoned games:** calls on them score nothing.
 - **Oracle of the Week:** the most points in a matchweek, crowned at noon the day after the matchweek's last game. Ties go to the most exact scores, then the most right Know Ball answers, then the fastest total Know Ball time.
 - **Ranks:** Reader at 150 season points, Seer at 500, Oracle at 1,200. Prophet is the top 1% at the end of the season.
-- **Mistakes:** if a question turns out to be wrong or unclear, or a score is entered wrongly, we'll fix it, recalculate points and tell members on the site. If you think your score is wrong, tell us within 7 days at support@crystalballfc.com.
+- **Mistakes:** if a question turns out to be wrong or unclear, or a score is entered wrongly, we'll fix it, recalculate points and tell members on the site. If you think your score is wrong, tell us within 7 days at dee@crystalballfc.com.
 
 ### 5. Fair play
 
@@ -126,5 +126,4 @@ These terms are governed by the laws of the Federal Republic of Nigeria. If you 
 
 ### 17. Contact
 
-- Questions about the games or your account: support@crystalballfc.com
-- Privacy: privacy@crystalballfc.com{{POST}}
+- Email: dee@crystalballfc.com, for questions about the games, your account or your data{{POST}}

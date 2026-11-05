@@ -7,9 +7,9 @@ import { marked } from 'marked';
 // Anything left empty is worded around, so no [blanks] ever show on the live site.
 export const LEGAL = {
   updated: '5 November 2026',
-  company: '',          // registered name, e.g. 'Crystal Ball FC Limited'
-  rc: '',               // CAC RC number
-  address: '',          // registered address from the CAC certificate
+  company: 'JKK Ltd',   // Crystal Ball FC is a product of JKK Ltd
+  rc: '7184906',        // CAC company registration number (certificate dated 19 October 2023)
+  address: '',          // registered address (not on the certificate; from the CAC status report)
   dataContact: '',      // the person who answers privacy requests, e.g. 'Dumebi Malogo'
   liabilityCap: '',     // set by the lawyer, e.g. '₦50,000'
 };
@@ -33,8 +33,8 @@ function fill(md: string, kind: 'privacy' | 'terms'): string {
     .replaceAll('{{UPDATED}}', updated)
     .replaceAll('{{OPERATOR}}', operator(kind))
     .replaceAll('{{DATA_CONTACT}}', dataContact
-      ? `Our data protection contact is ${dataContact}, at privacy@crystalballfc.com.`
-      : 'You can reach the person responsible for data protection at privacy@crystalballfc.com.')
+      ? `Our data protection contact is ${dataContact}, at dee@crystalballfc.com.`
+      : 'You can reach the person responsible for data protection at dee@crystalballfc.com.')
     .replaceAll('{{LIABILITY}}', liabilityCap
       ? `Our total liability to you is limited to ${liabilityCap} or the value of any prize you've won from us, whichever is higher.`
       : "Our total liability to you is limited to the value of any prize you've won from us.")

@@ -18,7 +18,7 @@ export function MyData() {
   }
   async function remove() {
     const { error } = await supabase.rpc('delete_my_account');
-    if (error) return setMsg('Deleting failed. Email privacy@crystalballfc.com and we will do it for you.');
+    if (error) return setMsg('Deleting failed. Email dee@crystalballfc.com and we will do it for you.');
     await supabase.auth.signOut();
     location.href = '/';
   }
