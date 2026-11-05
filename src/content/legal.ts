@@ -11,7 +11,7 @@ export const LEGAL = {
   rc: '7184906',        // CAC company registration number (certificate dated 19 October 2023)
   address: '31 Ayodele Okeowo Road, Soluyi, Gbagada, Lagos',   // registered address
   dataContact: '',      // the person who answers privacy requests, e.g. 'Dumebi Malogo'
-  liabilityCap: '',     // set by the lawyer, e.g. '₦50,000'
+  liabilityCap: '₦50,000',   // agreed 5 Nov 2026
 };
 
 function operator(kind: 'privacy' | 'terms'): string {
