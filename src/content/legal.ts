@@ -9,7 +9,7 @@ export const LEGAL = {
   updated: '5 November 2026',
   company: 'JKK Ltd',   // Crystal Ball FC is a product of JKK Ltd
   rc: '7184906',        // CAC company registration number (certificate dated 19 October 2023)
-  address: '',          // registered address (not on the certificate; from the CAC status report)
+  address: '31 Ayodele Okeowo Road, Soluyi, Gbagada, Lagos',   // registered address
   dataContact: '',      // the person who answers privacy requests, e.g. 'Dumebi Malogo'
   liabilityCap: '',     // set by the lawyer, e.g. '₦50,000'
 };
