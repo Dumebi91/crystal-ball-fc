@@ -2,6 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // The Terms and Privacy text is read from these files when the page is served.
+  outputFileTracingIncludes: { '/terms': ['./src/content/*.md'], '/privacy': ['./src/content/*.md'] },
   async headers() {
     return [{
       source: '/(.*)',
